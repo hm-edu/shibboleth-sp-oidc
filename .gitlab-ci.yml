@@ -1,0 +1,52 @@
+stages:
+  - build
+  - quality
+  - containerize
+
+.node: &node
+  image: docker.io/node:20.5.0-alpine3.18@sha256:11087abe911baf2fd7e34192f4598bf7e438239e9914f5b7ecda5fb5a7b1a2dd
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@latest-8 --activate
+    - pnpm config set store-dir .pnpm-store
+
+build:
+  <<: *node
+  stage: build
+  script:
+    - pnpm i --frozen-lockfile
+  only:
+    - main
+    - merge_requests
+
+lint:
+  <<: *node
+  stage: quality
+  script:
+    - pnpm i --frozen-lockfile
+    - pnpm lint
+  only:
+    - main
+    - merge_requests
+
+prettier:
+  <<: *node
+  stage: quality
+  script:
+    - pnpm i --frozen-lockfile
+    - pnpm prettier:check
+  only:
+    - main
+    - merge_requests
+
+containerize:
+  stage: containerize
+  image:
+    name: gcr.io/kaniko-project/executor:v1.9.2-debug@sha256:964426c9205d644e2964869d1d311a05dc9f301594300d3732ea26b5733e94fc
+    entrypoint: ['']
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile Dockerfile.amd64 --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
