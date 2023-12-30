@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import HmLogo from '@/components/icons/hmLogo';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from './api/auth/[...nextauth]/route';
+import authOptions from '@/lib/authOptions';
 
 const Home = async () => {
   const session = await getServerSession(authOptions);
