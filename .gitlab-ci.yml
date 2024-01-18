@@ -42,7 +42,7 @@ prettier:
 containerize:
   stage: containerize
   image:
-    name: gcr.io/kaniko-project/executor:v1.19.2-debug@sha256:899886a2db1c127ff1565d5c7b1e574af1810bbdad048e9850e4f40b5848d79c
+    name: gcr.io/kaniko-project/executor:v1.20.0-debug@sha256:6976d731d1fc2a4e89986d833c1538946bd36b43e21fb1d0db38fe9499adc49c
     entrypoint: ['']
   script:
     - mkdir -p /kaniko/.docker
