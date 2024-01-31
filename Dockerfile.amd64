@@ -1,4 +1,4 @@
-FROM docker.io/node:21.6.0-alpine3.18@sha256:cfe81f74095808b2288ab6d8bdc774fa0f5cadfabf66ed575e126da3b81aebd0 AS base
+FROM docker.io/node:21.6.1-alpine3.18@sha256:64bcbb6943659d87398ba45936755d9cb2952b752ca4aada53d6fa2320185340 AS base
 
 # Install dependencies only when needed
 FROM base AS deps
