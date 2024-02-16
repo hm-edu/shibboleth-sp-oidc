@@ -4,7 +4,7 @@ stages:
   - containerize
 
 .node: &node
-  image: docker.io/node:21.6.1-alpine3.18@sha256:64bcbb6943659d87398ba45936755d9cb2952b752ca4aada53d6fa2320185340
+  image: docker.io/node:21.6.2-alpine3.18@sha256:f94c74c412c634f4947723ba8fcef37f702b6405fd04a6d7fcfc5e73c48d166f
   before_script:
     - corepack enable
     - corepack prepare pnpm@latest-8 --activate
