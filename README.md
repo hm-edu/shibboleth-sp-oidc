@@ -25,8 +25,8 @@ Create a file called `.env.local` in the root of the project and add the followi
 
 ```bash
 # shibboleth oidc enviroment variables
-SHIBBOELTH_OIDC_USER_INFO_URL=
-SHIBBOELTH_OIDC_CONFIGURATION_URL=
+SHIBBOLETH_OIDC_USER_INFO_URL=
+SHIBBOLETH_OIDC_CONFIGURATION_URL=
 SHIBBOELTH_OIDC_SCOPE=
 SHIBBOLETH_OIDC_CLIENT_ID=
 SHIBBOLETH_OIDC_CLIENT_SECRET=

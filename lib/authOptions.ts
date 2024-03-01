@@ -27,7 +27,7 @@ const authOptions: NextAuthOptions = {
       id: 'shibboleth',
       name: 'Shibboleth',
       type: 'oauth',
-      wellKnown: process.env.SHIBBOELTH_OIDC_CONFIGURATION_URL,
+      wellKnown: process.env.SHIBBOLETH_OIDC_CONFIGURATION_URL,
       clientId: process.env.SHIBBOLETH_OIDC_CLIENT_ID,
       clientSecret: process.env.SHIBBOLETH_OIDC_CLIENT_SECRET,
       authorization: {
@@ -37,14 +37,14 @@ const authOptions: NextAuthOptions = {
       },
       idToken: true,
       userinfo: {
-        url: process.env.SHIBBOELTH_OIDC_USER_INFO_URL,
+        url: process.env.SHIBBOLETH_OIDC_USER_INFO_URL,
         async request(context): Promise<Profile> {
           if (
-            process.env.SHIBBOELTH_OIDC_USER_INFO_URL &&
+            process.env.SHIBBOLETH_OIDC_USER_INFO_URL &&
             context.tokens.access_token
           ) {
             return getUserInfo(
-              process.env.SHIBBOELTH_OIDC_USER_INFO_URL,
+              process.env.SHIBBOLETH_OIDC_USER_INFO_URL,
               context.tokens.access_token,
             );
           }
