@@ -24,14 +24,14 @@ pnpm prettier:check
 Create a file called `.env.local` in the root of the project and add the following:
 
 ```bash
-# shibboleth oidc enviroment variables
+# shibboleth oidc environment variables
 SHIBBOLETH_OIDC_USER_INFO_URL=
 SHIBBOLETH_OIDC_CONFIGURATION_URL=
-SHIBBOELTH_OIDC_SCOPE=
+SHIBBOLETH_OIDC_SCOPE=
 SHIBBOLETH_OIDC_CLIENT_ID=
 SHIBBOLETH_OIDC_CLIENT_SECRET=
 
-# next-auth enviroment variables
+# next-auth environment variables
 NEXTAUTH_SECRET=
 NEXTAUTH_URL=
 ```

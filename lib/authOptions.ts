@@ -32,7 +32,7 @@ const authOptions: NextAuthOptions = {
       clientSecret: process.env.SHIBBOLETH_OIDC_CLIENT_SECRET,
       authorization: {
         params: {
-          scope: process.env.SHIBBOELTH_OIDC_SCOPE,
+          scope: process.env.SHIBBOLETH_OIDC_SCOPE,
         },
       },
       idToken: true,
