@@ -8,27 +8,31 @@
     "start": "next start",
     "lint": "next lint",
     "prettier:format": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
-    "@fontsource/roboto": "^5.0.7",
-    "@mui/icons-material": "^5.14.3",
-    "@mui/material": "^5.14.3",
+    "@fontsource/roboto": "^5.0.12",
+    "@mui/icons-material": "^5.15.14",
+    "@mui/material": "^5.15.14",
+    "@mui/material-nextjs": "^5.15.11",
     "@types/node": "20.11.30",
     "@types/react": "18.2.73",
-    "@types/react-dom": "18.2.22",
+    "@types/react-dom": "18.2.23",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
     "next": "14.1.4",
-    "next-auth": "^4.22.3",
+    "next-auth": "^4.24.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.4.3"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^9.0.0",
-    "prettier": "^3.0.1"
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5"
   }
 }

@@ -1,9 +1,11 @@
-import './globals.css';
 import { Metadata, Viewport } from 'next';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import ButtonAppBar from '@/components/navbar';
+import { Box, Container } from '@mui/material';
+import ButtonAppBar from '@/app/ui/navbar';
 import NextAuthProvider from './context/NextAuthProvider';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import theme from '@/app/theme';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'OIDC Service-Provider Demo with Next.js',
@@ -15,27 +17,32 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <NextAuthProvider>
-          <ButtonAppBar />
-          <Container
-            sx={{ paddingTop: '10px', paddingBottom: '10px' }}
-            maxWidth="xl"
-          >
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              flexDirection="column"
-              sx={{ height: '100vh' }}
-            >
-              {children}
-            </Box>
-          </Container>
-        </NextAuthProvider>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <NextAuthProvider>
+              <ButtonAppBar />
+              <Container
+                sx={{ paddingTop: '10px', paddingBottom: '10px' }}
+                maxWidth="xl"
+              >
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  flexDirection="column"
+                  sx={{ height: '100vh' }}
+                >
+                  {children}
+                </Box>
+              </Container>
+            </NextAuthProvider>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

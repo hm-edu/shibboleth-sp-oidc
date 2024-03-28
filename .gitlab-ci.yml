@@ -47,6 +47,6 @@ containerize:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile Dockerfile.amd64 --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile Dockerfile-amd64 --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   only:
     - main

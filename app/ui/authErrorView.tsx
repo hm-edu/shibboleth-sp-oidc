@@ -1,8 +1,7 @@
 'use client';
 
-import { getAuthErrorDescription } from '@/lib/errorDescription';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
+import { getAuthErrorDescription } from '@/app/errorDescription';
+import { Alert, AlertTitle } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
 
 const AuthErrorView = () => {

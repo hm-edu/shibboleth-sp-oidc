@@ -1,24 +1,26 @@
-import Typography from '@mui/material/Typography';
-import HmLogo from '@/components/icons/hmLogo';
-import { getServerSession } from 'next-auth/next';
-import authOptions from '@/lib/authOptions';
+import { Typography } from '@mui/material';
+import HmLogoWithText from '@/app/ui/icons/hmLogoWithText';
+import { getServerSession, Session } from 'next-auth';
+import authOptions from '@/app/authOptions';
 
 const Home = async () => {
   const session = await getServerSession(authOptions);
 
   return (
     <>
-      <HmLogo sx={{ height: '15em', width: 'auto' }} />
-      <Typography variant="h2" sx={{ textAlign: 'center' }}>
+      <HmLogoWithText sx={{ height: '15em', width: 'auto' }} />
+      <Typography variant="h2" textAlign="center">
         OIDC Service-Provider Demo with Next.js
       </Typography>
-      <Typography variant="h4" sx={{ textAlign: 'center' }}>
-        {session ? (
-          `Welcome ${session.user?.name}! Your email address is ${session.user?.email}`
-        ) : (
-          <></>
-        )}
-      </Typography>
+      {session?.user.eduPersonPrincipalName && session.user.pairwiseId ? (
+        <Typography variant="h5" textAlign="center">
+          Welcome <samp>{session.user?.eduPersonPrincipalName}</samp>{' '}
+          (eduPersonPrincipalName)! Your pairwiseId is{' '}
+          <samp>{session.user?.pairwiseId}</samp>
+        </Typography>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

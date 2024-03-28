@@ -1,4 +1,4 @@
-import AuthErrorView from '@/components/authErrorView';
+import AuthErrorView from '@/app/ui/authErrorView';
 
 const AuthSignInError = () => <AuthErrorView />;
 
