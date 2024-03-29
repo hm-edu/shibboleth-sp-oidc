@@ -10,15 +10,6 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This projects also checks the quality of the code with [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/). Also, the quality of the code is checked with [TypeScript](https://www.typescriptlang.org/). The CI/CD is done within GitLab with appropriate steps: `build`, `lint`, `prettier:check` and `containerize`.
-
-To run the linter:
-
-```bash
-pnpm lint
-pnpm prettier:check
-```
-
 ## Shibboleth OIDC Configuration
 
 Create a file called `.env.local` in the root of the project and add the following:
@@ -34,5 +25,4 @@ SHIBBOLETH_OIDC_ISSUER_URL="<given-issuer-url>"
 SHIBBOLETH_OIDC_SCOPE="<given-scope>"
 SHIBBOLETH_OIDC_CLIENT_ID="<given-client-id>"
 SHIBBOLETH_OIDC_CLIENT_SECRET="<given-client-secret>"
-
 ```

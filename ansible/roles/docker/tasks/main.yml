@@ -1,0 +1,27 @@
+---
+- name: Update the apt index
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Add signing key from official repo  for Debian
+  become: true
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+
+- name: Add official docker repository for Debian
+  become: true
+  ansible.builtin.apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable'
+    state: present
+
+- name: Index new repo
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Actually install docker
+  ansible.builtin.apt:
+    name: 'docker-ce'
+    state: present

@@ -1,0 +1,9 @@
+---
+- name: This playbook deploys the Shibboleth OIDC PoC
+  hosts: shibboleth-oidc-poc
+  roles:
+    - tools
+    - docker
+    - role: shibboleth-oidc-poc
+      shibboleth_oidc_poc_domain: shibboleth-oidc-poc.seclab.cs.hm.edu
+      shibboleth_oidc_poc_scope: openid

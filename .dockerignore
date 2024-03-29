@@ -1,10 +1,12 @@
 Dockerfile
 node_modules
+ansible
 npm-debug.log
 README.md
 .dockerignore
 .next
 .git
+.idea
 .editorconfig
 .eslintrc.json
 .gitignore

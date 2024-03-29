@@ -1,0 +1,2 @@
+FROM docker.io/caddy:2.7.6-alpine@sha256:a6054d207060158cd0f019d6a35907bf47d1f8dacf58cdb63075a930d8ebca38
+COPY ./containerize/reverse-proxy/Caddyfile /etc/caddy/Caddyfile

@@ -1,0 +1,44 @@
+---
+- name: Create installation directory
+  ansible.builtin.file:
+    path: '{{ installation_dir }}'
+    state: directory
+    mode: '0700'
+
+- name: Expand docker-compose
+  ansible.builtin.template:
+    src: docker-compose.yml
+    dest: '{{ installation_dir }}/docker-compose.yml'
+    mode: '0600'
+
+# Thus is needed, cause using docker-compose is breaking functionality
+- name: Fire down docker-compose with command
+  ansible.builtin.command:
+    chdir: '{{ installation_dir }}'
+    cmd: docker compose -f docker-compose.yml down
+  changed_when: true
+
+- name: Cleanup docker container and images
+  community.docker.docker_prune:
+    containers: true
+    images: true
+    networks: true
+    builder_cache: true
+
+- name: Log into gitlab.lrz.de container registry
+  community.docker.docker_login:
+    registry: '{{ gitlab_registry }}'
+    username: '{{ gitlab_registry_user }}'
+    password: '{{ gitlab_registry_password }}'
+    reauthorize: true
+
+# Thus is needed, cause using docker-compose is breaking functionality
+- name: Fire up docker-compose with command
+  ansible.builtin.command:
+    chdir: '{{ installation_dir }}'
+    cmd: docker compose -f docker-compose.yml up -d
+  changed_when: true
+
+- name: Log out of gitlab.lrz.de container registry
+  community.docker.docker_login:
+    state: absent

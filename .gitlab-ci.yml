@@ -1,7 +1,20 @@
 stages:
-  - build
   - quality
   - containerize
+  - deploy
+
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  policy: pull-push
+  paths:
+    - node_modules
+    - .pnpm-store
+
+variables:
+  ANSIBLE_FORCE_COLOR: 'true'
+  ANSIBLE_CONFIG: $CI_PROJECT_DIR/ansible/ansible.cfg
 
 .node: &node
   image: docker.io/node:21.7.1-alpine3.18@sha256:e020db2afd747842ce18ceb760a225ad2bb3e03586edde241085fcac65135d0f
@@ -9,44 +22,116 @@ stages:
     - corepack enable
     - corepack prepare pnpm@latest-8 --activate
     - pnpm config set store-dir .pnpm-store
-
-build:
-  <<: *node
-  stage: build
-  script:
     - pnpm i --frozen-lockfile
-  only:
-    - main
-    - merge_requests
 
-lint:
+.ansible: &ansible
+  image:
+    name: ghcr.io/hm-edu/ansible-ci:v1.8.13@sha256:f7b00a95b5be5cdb8c37c1d1a2759e4efd17acb15c9662bff9b1118914da8439
+    entrypoint: ['']
+  cache: []
+
+next-build:
   <<: *node
   stage: quality
   script:
-    - pnpm i --frozen-lockfile
+    - pnpm build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+next-lint:
+  <<: *node
+  stage: quality
+  script:
     - pnpm lint
-  only:
-    - main
-    - merge_requests
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
-prettier:
+next-prettier:
+  <<: *node
+  stage: quality
+  script:
+    - pnpm prettier:check
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+next-test:
   <<: *node
   stage: quality
   script:
     - pnpm i --frozen-lockfile
-    - pnpm prettier:check
-  only:
-    - main
-    - merge_requests
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+next-test-e2e:
+  <<: *node
+  stage: quality
+  script:
+    - pnpm i --frozen-lockfile
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+ansible-syntax:
+  <<: *ansible
+  stage: quality
+  script:
+    - ansible-playbook --syntax-check ansible/playbooks/*
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+ansible-lint:
+  <<: *ansible
+  stage: quality
+  script:
+    - ansible-lint -p ansible/playbooks ansible/roles
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
 containerize:
   stage: containerize
+  cache: []
   image:
     name: gcr.io/kaniko-project/executor:v1.22.0-debug@sha256:7b3699e9e105521075812cd3f3f4c62c913cb5cd113c929975502022df3bcf60
     entrypoint: ['']
+  parallel:
+    matrix:
+      - IMAGE: [shibboleth-oidc-poc, reverse-proxy]
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile Dockerfile-amd64 --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-  only:
-    - main
+    - /kaniko/executor
+      --context $CI_PROJECT_DIR
+      --dockerfile ./containerize/${IMAGE}/Dockerfile-amd64
+      --destination $CI_REGISTRY_IMAGE/${IMAGE}:$CI_COMMIT_SHORT_SHA
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+deploy:
+  <<: *ansible
+  stage: deploy
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ansible-playbook
+      --extra-vars="
+      commit_short_sha='$CI_COMMIT_SHORT_SHA'
+      gitlab_registry='$CI_REGISTRY'
+      gitlab_registry_user='$CI_REGISTRY_USER'
+      gitlab_registry_password='$CI_JOB_TOKEN'
+      acme_eab_kid='$ACME_EAB_KID'
+      acme_eab_hmac_encoded='$ACME_EAB_HMAC_ENCODED'
+      shibboleth_oidc_poc_nextauth_secret='$NEXTAUTH_SECRET'
+      shibboleth_oidc_poc_client_id='$OIDC_CLIENT_ID'
+      shibboleth_oidc_poc_client_secret='$OIDC_CLIENT_SECRET'"
+      ansible/playbooks/shibboleth-oidc-poc.yml
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
