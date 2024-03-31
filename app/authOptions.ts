@@ -3,7 +3,6 @@ import { Awaitable, NextAuthOptions, User } from 'next-auth';
 
 const authOptions: NextAuthOptions = {
   secret: appConfig.nextAuth.secret,
-  debug: true,
   providers: [
     {
       id: 'shibboleth',
@@ -16,7 +15,7 @@ const authOptions: NextAuthOptions = {
       authorization: { params: { scope: appConfig.shibboleth.scope } },
       clientId: appConfig.shibboleth.clientId,
       clientSecret: appConfig.shibboleth.clientSecret,
-      profile(profile, tokens): Awaitable<User> {
+      profile(profile): Awaitable<User> {
         return {
           id: profile.sub,
           eduPersonPrincipalName: profile.eduPersonPrincipalName,

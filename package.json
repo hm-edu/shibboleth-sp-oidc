@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test:unit": "vitest",
     "lint": "next lint",
     "prettier:format": "prettier --write .",
     "prettier:check": "prettier --check .",
@@ -31,8 +32,14 @@
     "typescript": "5.4.3"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.2.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/ui": "^1.4.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
-    "prettier": "^3.2.5"
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.5",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.4.0"
   }
 }

@@ -16,6 +16,6 @@ export const defineConfig = (): AppConfig => {
 };
 
 const loadString = (env: string | undefined): string => {
-  if (env == undefined) return `Environment variable ${env} was not set`;
+  if (env === undefined) return `Environment variable ${env} was not set`;
   return env;
 };

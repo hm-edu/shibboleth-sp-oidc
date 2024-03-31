@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import HmLogoWithText from '@/app/ui/icons/hmLogoWithText';
-import { getServerSession, Session } from 'next-auth';
+import { getServerSession } from 'next-auth';
 import authOptions from '@/app/authOptions';
 
 const Home = async () => {
@@ -8,7 +8,10 @@ const Home = async () => {
 
   return (
     <>
-      <HmLogoWithText sx={{ height: '15em', width: 'auto' }} />
+      <HmLogoWithText
+        aria-label="HM Logo"
+        sx={{ height: '15em', width: 'auto' }}
+      />
       <Typography variant="h2" textAlign="center">
         OIDC Service-Provider Demo with Next.js
       </Typography>

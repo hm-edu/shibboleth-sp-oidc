@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar, when user is authenticated > Button should match snapshot 1`] = `
+<button
+  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-sbfmij-MuiButtonBase-root-MuiButton-root"
+  tabindex="0"
+  type="button"
+>
+  Abmelden
+  <span
+    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+  />
+</button>
+`;
+
+exports[`Navbar, when user is authenticated > Link should match snapshot 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-h6 css-14wxt8y-MuiTypography-root"
+  href="/"
+>
+  Accounting-Portal
+</a>
+`;
+
+exports[`Navbar, when user is authenticated > Logo should match snapshot 1`] = `
+<svg
+  aria-hidden="true"
+  aria-label="HM Logo"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
+  focusable="false"
+  viewBox="0 0 138.189 63.78"
+  x="0"
+  y="0"
+>
+  <style>
+    .st0{fill:#fff}
+  </style>
+  <path
+    class="st0"
+    d="m106.299 15.945 15.944-5.315 5.315 15.945-15.944 5.314zM40.942 29.389H15.75v-18.76H10.63v42.52h5.12V33.678h25.192V53.15h5.12V10.63h-5.12zM74.617 46.48H74.5L61.07 10.63h-7.92v42.52h4.883V15.87h.119l14.144 37.28h4.167l14.145-37.28h.12v37.28h4.941V10.63h-7.622z"
+  />
+</svg>
+`;
+
+exports[`Navbar, when user is not authenticated > Button should match snapshot 1`] = `
+<button
+  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-sbfmij-MuiButtonBase-root-MuiButton-root"
+  tabindex="0"
+  type="button"
+>
+  Anmelden
+  <span
+    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+  />
+</button>
+`;
+
+exports[`Navbar, when user is not authenticated > Link should match snapshot 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-h6 css-14wxt8y-MuiTypography-root"
+  href="/"
+>
+  Accounting-Portal
+</a>
+`;
+
+exports[`Navbar, when user is not authenticated > Logo should match snapshot 1`] = `
+<svg
+  aria-hidden="true"
+  aria-label="HM Logo"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
+  focusable="false"
+  viewBox="0 0 138.189 63.78"
+  x="0"
+  y="0"
+>
+  <style>
+    .st0{fill:#fff}
+  </style>
+  <path
+    class="st0"
+    d="m106.299 15.945 15.944-5.315 5.315 15.945-15.944 5.314zM40.942 29.389H15.75v-18.76H10.63v42.52h5.12V33.678h25.192V53.15h5.12V10.63h-5.12zM74.617 46.48H74.5L61.07 10.63h-7.92v42.52h4.883V15.87h.119l14.144 37.28h4.167l14.145-37.28h.12v37.28h4.941V10.63h-7.622z"
+  />
+</svg>
+`;

@@ -1,4 +1,4 @@
-import { AppBar, Button, Box, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import SignInButton from './signInButton';
 import SignOutButton from './signOutButton';
 import HmLogo from '@/app/ui/icons/hmLogo';
@@ -12,7 +12,7 @@ const Navbar = async () => {
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
         <Toolbar>
-          <HmLogo />
+          <HmLogo aria-label="HM Logo" />
           <Typography
             variant="h6"
             component="a"
