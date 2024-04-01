@@ -25,7 +25,7 @@ const Navbar = async () => {
               display: { xs: 'none', sm: 'block' },
             }}
           >
-            Accounting-Portal
+            Shibboleth OIDC PoC
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {session ? <SignOutButton /> : <SignInButton />}

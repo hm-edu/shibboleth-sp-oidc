@@ -6,4 +6,5 @@
     - docker
     - role: shibboleth-oidc-poc
       shibboleth_oidc_poc_domain: shibboleth-oidc-poc.seclab.cs.hm.edu
+      shibboleth_oidc_poc_issuer_url: https://sso.hm.edu
       shibboleth_oidc_poc_scope: openid

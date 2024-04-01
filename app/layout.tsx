@@ -8,8 +8,8 @@ import theme from '@/app/theme';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'OIDC Service-Provider Demo with Next.js',
-  description: 'OIDC Service-Provider Demo with Next.js',
+  title: 'Shibboleth OIDC PoC',
+  description: 'Shibboleth OIDC PoC',
 };
 
 export const viewport: Viewport = {
