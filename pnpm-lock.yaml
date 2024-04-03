@@ -58,6 +58,9 @@ dependencies:
     version: 5.4.3
 
 devDependencies:
+  '@playwright/test':
+    specifier: 1.43.0-beta-1712010778000
+    version: 1.43.0-beta-1712010778000
   '@testing-library/react':
     specifier: ^14.2.2
     version: 14.2.2(react-dom@18.2.0)(react@18.2.0)
@@ -1073,6 +1076,14 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@playwright/test@1.43.0-beta-1712010778000:
+    resolution: {integrity: sha512-aaa1K9ddxulYerORzNn9xoFeWosOJ3fAnktlRfXL1HLpYntt+46gU42slC3UmCfO6RKUsVRQH2SdrBcEh1FgUw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright: 1.43.0-beta-1712010778000
+    dev: true
 
   /@polka/url@1.0.0-next.25:
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
@@ -2592,6 +2603,14 @@ packages:
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
+  /fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -3617,6 +3636,22 @@ packages:
       jsonc-parser: 3.2.1
       mlly: 1.6.1
       pathe: 1.1.2
+    dev: true
+
+  /playwright-core@1.43.0-beta-1712010778000:
+    resolution: {integrity: sha512-snyU22lN8lLHCMv7ksh7SOne67JkRGLV85l1kLVXShsK/qgrfSawo8bef2zp4+9DDuo58683DkN3vCk2K1bq0w==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
+  /playwright@1.43.0-beta-1712010778000:
+    resolution: {integrity: sha512-er6h0AjCPAw3jqZsBEGy/f3YnJnjzB6QRUTbr7eqSbClHT5KlPe0jEMr3e9pmGy/pm4IyQtK46WIG/Z8qX9fCw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.43.0-beta-1712010778000
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /possible-typed-array-names@1.0.0:

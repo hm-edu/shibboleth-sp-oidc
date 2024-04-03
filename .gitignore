@@ -321,9 +321,13 @@ fabric.properties
 # Ignore everything but code style settings and run configurations
 # that are supposed to be shared within teams.
 
-.idea/*
+.idea/**/*
 
 !.idea/codeStyles
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/nextjs,node,visualstudiocode,webstorm+all,linux,macos
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

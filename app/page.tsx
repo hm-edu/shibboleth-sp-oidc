@@ -15,11 +15,9 @@ const Home = async () => {
       <Typography variant="h2" textAlign="center">
         OIDC Service-Provider Demo with Next.js
       </Typography>
-      {session?.user.eduPersonPrincipalName && session.user.pairwiseId ? (
+      {session?.user.pairwiseId ? (
         <Typography variant="h5" textAlign="center">
-          Welcome <samp>{session.user?.eduPersonPrincipalName}</samp>{' '}
-          (eduPersonPrincipalName)! Your pairwiseId is{' '}
-          <samp>{session.user?.pairwiseId}</samp>
+          Welcome! Your pairwiseId is <samp>{session.user?.pairwiseId}</samp>
         </Typography>
       ) : (
         <></>

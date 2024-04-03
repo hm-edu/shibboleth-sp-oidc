@@ -111,13 +111,7 @@ exports[`Home, when user is authenticated > Subheader should match snapshot 1`] 
 <h5
   class="MuiTypography-root MuiTypography-h5 css-ph2xsj-MuiTypography-root"
 >
-  Welcome 
-  <samp>
-    eduPersonPrincipalName
-  </samp>
-   
-  (eduPersonPrincipalName)! Your pairwiseId is
-   
+  Welcome! Your pairwiseId is 
   <samp>
     pairwiseId
   </samp>

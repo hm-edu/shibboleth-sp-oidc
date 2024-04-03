@@ -51,7 +51,6 @@ describe('Navbar, when user is authenticated', () => {
     user: {
       id: '1',
       pairwiseId: 'pairwiseId',
-      eduPersonPrincipalName: 'eduPersonPrincipalName',
     },
     expires: '2021-10-10T10:10:10.000Z',
   };

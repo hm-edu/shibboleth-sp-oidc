@@ -7,7 +7,6 @@ import { AdapterUser } from 'next-auth/adapters';
 describe('authOptions', () => {
   const mockUser: AdapterUser = {
     id: '123',
-    eduPersonPrincipalName: 'eduPersonPrincipalName',
     pairwiseId: '123',
     email: 'email',
     emailVerified: new Date(),
@@ -27,13 +26,11 @@ describe('authOptions', () => {
   const mockToken: JWT = {
     id: mockUser.id,
     sub: mockUser.id,
-    eduPersonPrincipalName: mockUser.eduPersonPrincipalName,
     pairwiseId: mockUser.pairwiseId,
   };
 
   const mockProfile = {
     sub: mockUser.id,
-    eduPersonPrincipalName: mockUser.eduPersonPrincipalName,
     pairwiseId: mockUser.pairwiseId,
   };
 
@@ -80,9 +77,6 @@ describe('authOptions', () => {
 
       const user = await shibbolethProvider.profile(mockProfile, {});
       expect(user.id).toEqual(mockProfile.sub);
-      expect(user.eduPersonPrincipalName).toEqual(
-        mockProfile.eduPersonPrincipalName,
-      );
       expect(user.pairwiseId).toEqual(mockProfile.pairwiseId);
     }
   });
@@ -97,9 +91,6 @@ describe('authOptions', () => {
     })) as Session;
 
     expect(session.user.id).toEqual(mockSession.user.id);
-    expect(session.user.eduPersonPrincipalName).toEqual(
-      mockSession.user.eduPersonPrincipalName,
-    );
     expect(session.user.pairwiseId).toEqual(mockSession.user.pairwiseId);
   });
 
@@ -110,9 +101,6 @@ describe('authOptions', () => {
       account: mockAccount,
     });
 
-    expect(jwt.eduPersonPrincipalName).toEqual(
-      mockSession.user.eduPersonPrincipalName,
-    );
     expect(jwt.pairwiseId).toEqual(mockSession.user.pairwiseId);
   });
 

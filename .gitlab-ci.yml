@@ -67,10 +67,35 @@ next-test:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
 next-test-e2e:
-  <<: *node
   stage: quality
-  script:
+  ### BEGIN WORKAROUND
+  # use the Playwright image for e2e tests, until update to version 1.43.x occurred. Actual bug in Playwright 1.42.1
+  # --> https://github.com/microsoft/playwright/issues/29925
+  # image: mcr.microsoft.com/playwright:v1.42.1-jammy@sha256:b2b78a74b04b3cfdf35046c623c49741de35ef67f1b4a21de8e316dbb89fe68e
+  image: docker.io/node:21.7.1-bookworm@sha256:b9ccc4aca32eebf124e0ca0fd573dacffba2b9236987a1d4d2625ce3c162ecc8
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@latest-8 --activate
+    - pnpm config set store-dir .pnpm-store
     - pnpm i --frozen-lockfile
+    - pnpm build
+    - npx playwright install --with-deps
+  ### END WORKAROUND
+  script:
+    - NEXTAUTH_URL=http://localhost:3000
+      SHIBBOLETH_OIDC_ISSUER_URL=https://sso.hm.edu
+      SHIBBOLETH_OIDC_SCOPE=openid
+      NEXTAUTH_SECRET=topsecret
+      SHIBBOLETH_OIDC_CLIENT_ID='$OIDC_CLIENT_ID'
+      SHIBBOLETH_OIDC_CLIENT_SECRET='$OIDC_CLIENT_SECRET'
+      pnpm test:e2e
+  artifacts:
+    when: always
+    paths:
+      - test-results/**/*.webm
+      - test-results/**/*.png
+      - test-results/**/*.zip
+    expire_in: 1 day
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'

@@ -1,0 +1,65 @@
+{
+  "cookies": [
+    {
+      "name": "JSESSIONID",
+      "value": "7637B1E99A0C366B2D0E2DB29460C382",
+      "domain": "sso.hm.edu",
+      "path": "/idp",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "shib_idp_session",
+      "value": "decaa2b74feb5be9d51da5e5232fb72b9eeb8b64a9ed94bc38d53c9c33cdedbf",
+      "domain": "sso.hm.edu",
+      "path": "/idp",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "next-auth.csrf-token",
+      "value": "39439c4e185d816a78a2fba2ad45587ac189802e21192c6fe8b40c4f8208a0aa%7Cf14050e09eef95f3d0c9f99d52c2a66f8e0faade482a6c38c38a6761bf6f7fc2",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "next-auth.callback-url",
+      "value": "http%3A%2F%2Flocalhost%3A3000%2F",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "next-auth.session-token",
+      "value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..__i0RDf6PbDolLCF.MauF6uL76kgWA0wkiupPgD3phl_tWv8CMxcJ3GSeuKCxZIpFNunkynuY3y-TbaCqMVXSSRy41vnN87vsn4qjjtN7nfIxrnrLiY-fUwRSpdObcU1sTR8HiprG0acGVC4jMKOxAduYPsDDhx0yRVzrVRWDtk9IEzvT474E6S-BbST5dU0rPmH6NASCtNiNRUgx_S6DilcXLIn98-O230hlD7TZRzTM22u2kjHZizDlDQ.vkOG2_cUUKnowDcwq7LaTA",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1714732177.283189,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:3000",
+      "localStorage": [
+        {
+          "name": "nextauth.message",
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1712140175}"
+        }
+      ]
+    }
+  ]
+}
