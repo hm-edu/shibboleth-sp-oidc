@@ -10,7 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   webServer: {
-    command: 'node .next/standalone/server.js',
+    command: 'pnpm start',
     port: 3000,
     reuseExistingServer: !process.env.CI,
   },
