@@ -28,7 +28,7 @@ services:
     environment:
       - NEXTAUTH_URL=https://{{ shibboleth_oidc_poc_domain }}
       - NEXTAUTH_SECRET={{ shibboleth_oidc_poc_nextauth_secret }}
-      - SHIBBOLETH_OIDC_ISSUER_URL=https://{{ shibboleth_oidc_poc_issuer_url }}
+      - SHIBBOLETH_OIDC_ISSUER_URL={{ shibboleth_oidc_poc_issuer_url }}
       - SHIBBOLETH_OIDC_SCOPE={{ shibboleth_oidc_poc_scope }}
       - SHIBBOLETH_OIDC_CLIENT_ID={{ shibboleth_oidc_poc_client_id }}
       - SHIBBOLETH_OIDC_CLIENT_SECRET={{ shibboleth_oidc_poc_client_secret }}
