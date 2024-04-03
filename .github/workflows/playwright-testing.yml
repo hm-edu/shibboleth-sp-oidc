@@ -27,12 +27,12 @@ jobs:
       - name: Run Playwright tests
         run: pnpm test:e2e
         env:
-          - NEXTAUTH_URL:  http://localhost:3000
-          - SHIBBOLETH_OIDC_ISSUER_URL:  https://sso.hm.edu
-          - SHIBBOLETH_OIDC_SCOPE:  openid
-          - NEXTAUTH_SECRET:  topsecret
-          - SHIBBOLETH_OIDC_CLIENT_ID: ${{ secrets.OIDC_CLIENT_ID }}
-          - SHIBBOLETH_OIDC_CLIENT_SECRET: ${{ secrets.OIDC_CLIENT_SECRET }}
+          NEXTAUTH_URL:  http://localhost:3000
+          SHIBBOLETH_OIDC_ISSUER_URL:  https://sso.hm.edu
+          SHIBBOLETH_OIDC_SCOPE:  openid
+          NEXTAUTH_SECRET:  topsecret
+          SHIBBOLETH_OIDC_CLIENT_ID: ${{ secrets.OIDC_CLIENT_ID }}
+          SHIBBOLETH_OIDC_CLIENT_SECRET: ${{ secrets.OIDC_CLIENT_SECRET }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
