@@ -33,7 +33,7 @@
     "typescript": "5.4.3"
   },
   "devDependencies": {
-    "@playwright/test": "1.43.0-beta-1712217576000",
+    "@playwright/test": "1.43.0",
     "@testing-library/react": "^14.2.2",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/ui": "^1.4.0",
