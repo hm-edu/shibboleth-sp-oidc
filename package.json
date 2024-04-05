@@ -30,7 +30,7 @@
     "next-auth": "^4.24.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "devDependencies": {
     "@playwright/test": "1.43.0",
