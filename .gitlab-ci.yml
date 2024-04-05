@@ -154,6 +154,7 @@ deploy:
       gitlab_registry_password='$CI_JOB_TOKEN'
       acme_eab_kid='$ACME_EAB_KID'
       acme_eab_hmac_encoded='$ACME_EAB_HMAC_ENCODED'
+      shibboleth_oidc_poc_nextauth_debug='$NEXTAUTH_DEBUG'
       shibboleth_oidc_poc_nextauth_secret='$NEXTAUTH_SECRET'
       shibboleth_oidc_poc_client_id='$OIDC_CLIENT_ID'
       shibboleth_oidc_poc_client_secret='$OIDC_CLIENT_SECRET'"

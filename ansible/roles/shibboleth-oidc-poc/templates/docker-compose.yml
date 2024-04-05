@@ -26,6 +26,7 @@ services:
     networks:
       - shibboleth-oidc-poc-net
     environment:
+      - NEXTAUTH_DEBUG={{ shibboleth_oidc_poc_nextauth_debug }}
       - NEXTAUTH_URL=https://{{ shibboleth_oidc_poc_domain }}
       - NEXTAUTH_SECRET={{ shibboleth_oidc_poc_nextauth_secret }}
       - SHIBBOLETH_OIDC_ISSUER_URL={{ shibboleth_oidc_poc_issuer_url }}

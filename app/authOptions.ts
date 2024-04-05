@@ -3,6 +3,7 @@ import { Awaitable, NextAuthOptions, User } from 'next-auth';
 
 const authOptions: NextAuthOptions = {
   secret: appConfig.nextAuth.secret,
+  debug: appConfig.nextAuth.debug,
   providers: [
     {
       id: 'shibboleth',

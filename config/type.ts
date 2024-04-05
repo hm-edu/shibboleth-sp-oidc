@@ -4,6 +4,7 @@ export type AppConfig = {
 };
 
 export type NextAuth = {
+  debug: boolean;
   url: string;
   secret: string;
 };
