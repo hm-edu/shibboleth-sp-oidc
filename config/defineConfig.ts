@@ -3,6 +3,7 @@ import { AppConfig } from './type';
 export const defineConfig = (): AppConfig => {
   return {
     nextAuth: {
+      debug: loadBoolean(process.env.NEXTAUTH_DEBUG),
       secret: loadString(process.env.NEXTAUTH_SECRET),
       url: loadString(process.env.NEXTAUTH_URL),
     },
@@ -18,4 +19,9 @@ export const defineConfig = (): AppConfig => {
 const loadString = (env: string | undefined): string => {
   if (env === undefined) return `Environment variable ${env} was not set`;
   return env;
+};
+
+const loadBoolean = (env: string | undefined): boolean => {
+  if (env === undefined) return false;
+  return JSON.parse(loadString(env).toLowerCase());
 };

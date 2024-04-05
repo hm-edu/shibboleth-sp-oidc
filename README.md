@@ -15,8 +15,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Create a file called `.env.local` in the root of the project and add the following:
 
 ```bash
-# next-auth enviroment variables
 # next-auth environment variables
+NEXTAUTH_DEBUG="<true|false>"
 NEXTAUTH_SECRET="<given-secret>"
 NEXTAUTH_URL="<given-base-url>"
 
