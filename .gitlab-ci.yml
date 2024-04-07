@@ -72,7 +72,7 @@ next-test-e2e:
   # use the Playwright image for e2e tests, until update to version 1.43.x occurred. Actual bug in Playwright 1.42.1
   # --> https://github.com/microsoft/playwright/issues/29925
   # image: mcr.microsoft.com/playwright:v1.42.1-jammy@sha256:b2b78a74b04b3cfdf35046c623c49741de35ef67f1b4a21de8e316dbb89fe68e
-  image: docker.io/node:21.7.2-bookworm@sha256:b9c14d7c1251e52ff3a51080b1b5647de69a3d13ed04a5fe6189aac6d71fe26d
+  image: docker.io/node:21.7.2-bookworm@sha256:fa5e7e628c8fe0ebfd13239b0103de36df36903fc7fee18da9755d022b2b910f
   before_script:
     - corepack enable
     - corepack prepare pnpm@latest-8 --activate
