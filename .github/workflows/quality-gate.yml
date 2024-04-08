@@ -59,6 +59,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.43.0-jammy-amd64@sha256:e72111f8087db497b3b7d6b777864cf28270ebef3d001fabe384f4249992179d
+      env:
+        HOME: /root
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
