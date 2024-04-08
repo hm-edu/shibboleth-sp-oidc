@@ -68,19 +68,13 @@ next-test:
 
 next-test-e2e:
   stage: quality
-  ### BEGIN WORKAROUND
-  # use the Playwright image for e2e tests, until update to version 1.43.x occurred. Actual bug in Playwright 1.42.1
-  # --> https://github.com/microsoft/playwright/issues/29925
-  # image: mcr.microsoft.com/playwright:v1.42.1-jammy@sha256:b2b78a74b04b3cfdf35046c623c49741de35ef67f1b4a21de8e316dbb89fe68e
-  image: docker.io/node:21.7.2-bookworm@sha256:fa5e7e628c8fe0ebfd13239b0103de36df36903fc7fee18da9755d022b2b910f
+  image: mcr.microsoft.com/playwright:v1.43.0-jammy-amd64@sha256:e72111f8087db497b3b7d6b777864cf28270ebef3d001fabe384f4249992179d
   before_script:
     - corepack enable
     - corepack prepare pnpm@latest-8 --activate
     - pnpm config set store-dir .pnpm-store
     - pnpm i --frozen-lockfile
     - pnpm build
-    - npx playwright install --with-deps
-  ### END WORKAROUND
   script:
     - NEXTAUTH_URL=http://localhost:3000
       SHIBBOLETH_OIDC_ISSUER_URL=https://sso.hm.edu
