@@ -12,7 +12,7 @@ exports[`Home, when user is authenticated > Logo should match snapshot 1`] = `
 <svg
   aria-hidden="true"
   aria-label="HM Logo"
-  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wrgel0-MuiSvgIcon-root"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-5gw87d-MuiSvgIcon-root"
   enable-background="new 0 0 233.8582611 63.7795258"
   focusable="false"
   viewBox="0 0 233.858 63.78"
@@ -130,7 +130,7 @@ exports[`Home, when user is not authenticated > Logo should match snapshot 1`] =
 <svg
   aria-hidden="true"
   aria-label="HM Logo"
-  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wrgel0-MuiSvgIcon-root"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-5gw87d-MuiSvgIcon-root"
   enable-background="new 0 0 233.8582611 63.7795258"
   focusable="false"
   viewBox="0 0 233.858 63.78"
