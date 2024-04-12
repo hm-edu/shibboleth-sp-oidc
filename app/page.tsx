@@ -10,7 +10,7 @@ const Home = async () => {
     <>
       <HmLogoWithText
         aria-label="HM Logo"
-        sx={{ height: '15em', width: 'auto' }}
+        sx={{ height: 'auto', width: 'auto' }}
       />
       <Typography variant="h2" textAlign="center">
         OIDC Service-Provider Demo with Next.js
