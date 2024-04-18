@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Link, Toolbar } from '@mui/material';
 import SignInButton from './signInButton';
 import SignOutButton from './signOutButton';
 import HmLogo from '@/app/ui/icons/hmLogo';
@@ -12,24 +12,13 @@ const Navbar = async () => {
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
         <Toolbar>
-          <HmLogo aria-label="HM Logo" />
-          <Typography
-            variant="h6"
-            component="a"
-            href="/"
-            sx={{
-              margin: 1,
-              flexGrow: 1,
-              color: 'inherit',
-              textDecoration: 'none',
-              display: { xs: 'none', sm: 'block' },
-            }}
-          >
+          <HmLogo aria-label="HM Logo" sx={{ width: 64, height: 64 }} />
+          <Box sx={{ flexGrow: 1 }} />
+          <Link variant="h5" color="inherit" underline="none" href="/">
             Shibboleth OIDC PoC
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {session ? <SignOutButton /> : <SignInButton />}
-          </Box>
+          </Link>
+          <Box sx={{ flexGrow: 1 }} />
+          {session ? <SignOutButton /> : <SignInButton />}
         </Toolbar>
       </AppBar>
     </Box>
