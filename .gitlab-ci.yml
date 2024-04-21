@@ -26,7 +26,7 @@ variables:
 
 .ansible: &ansible
   image:
-    name: ghcr.io/hm-edu/ansible-ci:v1.8.14@sha256:8deccc7ceba7c8b09af1fd2fd1de61ffa212052b9663596f2951ff32c9cd5ac8
+    name: ghcr.io/hm-edu/ansible-ci:v1.8.15@sha256:2ea58c4e205fed6f793462aff25870e8977935b92cf060ca1d0d706d8e480673
     entrypoint: ['']
   cache: []
 
