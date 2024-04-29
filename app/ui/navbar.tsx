@@ -2,11 +2,10 @@ import { AppBar, Box, Link, Toolbar } from '@mui/material';
 import SignInButton from './signInButton';
 import SignOutButton from './signOutButton';
 import HmLogo from '@/app/ui/icons/hmLogo';
-import authOptions from '@/app/authOptions';
-import { getServerSession } from 'next-auth';
+import { auth } from '@/auth';
 
 const Navbar = async () => {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   return (
     <Box sx={{ display: 'flex' }}>

@@ -4,7 +4,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 
 describe('NotFound', () => {
   beforeEach(() => {
-    render(NotFound());
+    render(<NotFound />);
   });
 
   it('should exists', () => {

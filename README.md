@@ -16,9 +16,8 @@ Create a file called `.env.local` in the root of the project and add the followi
 
 ```bash
 # next-auth environment variables
-NEXTAUTH_DEBUG="<true|false>"
-NEXTAUTH_SECRET="<given-secret>"
-NEXTAUTH_URL="<given-base-url>"
+AUTH_DEBUG="<true|false>"
+AUTH_SECRET="<given-secret>" # generate a secret using `pnpm exec auth secret`
 
 # shibboleth oidc environment variables
 SHIBBOLETH_OIDC_ISSUER_URL="<given-issuer-url>"
