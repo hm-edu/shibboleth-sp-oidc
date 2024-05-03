@@ -17,7 +17,7 @@ variables:
   ANSIBLE_CONFIG: $CI_PROJECT_DIR/ansible/ansible.cfg
 
 .node: &node
-  image: docker.io/node:22.0.0-alpine3.18@sha256:75fcc4b76b7bfedde9e6b11e93f26cc63196aff0de4326fe895aa0e47e923a95
+  image: docker.io/node:22.1.0-alpine3.18@sha256:5a4751fb2e95bb0a0ad5ac1f92fd36076c7337b89667e396dbbabf36fa5b1d6f
   before_script:
     - corepack enable
     - corepack prepare pnpm@latest-8 --activate
