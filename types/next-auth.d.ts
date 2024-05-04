@@ -4,7 +4,9 @@ declare module 'next-auth' {
     pairwiseId: string;
   }
   interface Account {}
-  interface Session {}
+  interface Session {
+    user: User;
+  }
 }
 
 import { JWT } from 'next-auth/jwt';
