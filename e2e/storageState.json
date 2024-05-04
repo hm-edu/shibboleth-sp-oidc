@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "JSESSIONID",
-      "value": "7637B1E99A0C366B2D0E2DB29460C382",
+      "value": "A4F19C97C24486C397D1306CE1999935",
       "domain": "sso.hm.edu",
       "path": "/idp",
       "expires": -1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "shib_idp_session",
-      "value": "decaa2b74feb5be9d51da5e5232fb72b9eeb8b64a9ed94bc38d53c9c33cdedbf",
+      "value": "05f3f2a5326a0d2eb61609dac336065eb4c7042ef05a2ef71e5c4a95cacca0d0",
       "domain": "sso.hm.edu",
       "path": "/idp",
       "expires": -1,
@@ -22,7 +22,7 @@
     },
     {
       "name": "next-auth.csrf-token",
-      "value": "39439c4e185d816a78a2fba2ad45587ac189802e21192c6fe8b40c4f8208a0aa%7Cf14050e09eef95f3d0c9f99d52c2a66f8e0faade482a6c38c38a6761bf6f7fc2",
+      "value": "f6124c853d36a573c0c7d9ad7c96f35616149c90329f721d9b865325903f85c0%7Cf19cdf3043f2c9fa00d5f0bdd53fabb582a8a23eecfba30f3b8da24e48d6a4b1",
       "domain": "localhost",
       "path": "/",
       "expires": -1,
@@ -42,10 +42,10 @@
     },
     {
       "name": "next-auth.session-token",
-      "value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..__i0RDf6PbDolLCF.MauF6uL76kgWA0wkiupPgD3phl_tWv8CMxcJ3GSeuKCxZIpFNunkynuY3y-TbaCqMVXSSRy41vnN87vsn4qjjtN7nfIxrnrLiY-fUwRSpdObcU1sTR8HiprG0acGVC4jMKOxAduYPsDDhx0yRVzrVRWDtk9IEzvT474E6S-BbST5dU0rPmH6NASCtNiNRUgx_S6DilcXLIn98-O230hlD7TZRzTM22u2kjHZizDlDQ.vkOG2_cUUKnowDcwq7LaTA",
+      "value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..UpnfIuNiWUrvlSuO.DsFaEzVXocXCc4iCfRWxUbabi0bzbecoxeNStdhYvmA9GysW0QWVY1wfjHMy2TfTTDFkQDTFmGteE67wNWWoI1wb72m6hqakNL1FXxCFdfUf-Rel76Rcah1wZagPwgX5Qgp-H7dkUIdcDaqXH0tPYItaeMZrthmlwWs6O5MSgRRO-1fmtwXMEL4ke17jtzeAAm8iiAwS3KkSZbWUyk5tQMEagnU9W07pt7YQLu_JNw.DG7sahQN2KlN1Sv9EHXPuA",
       "domain": "localhost",
       "path": "/",
-      "expires": 1714732177.283189,
+      "expires": 1717402386.955988,
       "httpOnly": true,
       "secure": false,
       "sameSite": "Lax"
@@ -57,7 +57,7 @@
       "localStorage": [
         {
           "name": "nextauth.message",
-          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1712140175}"
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1714810386}"
         }
       ]
     }
