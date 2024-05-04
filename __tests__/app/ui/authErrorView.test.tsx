@@ -18,7 +18,7 @@ describe('AuthErrorView', () => {
       };
     });
 
-    render(AuthErrorView());
+    render(<AuthErrorView />);
   });
 
   it('should exists', () => {

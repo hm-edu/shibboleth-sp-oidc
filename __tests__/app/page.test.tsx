@@ -1,15 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import Page from '../../app/page';
-import { getServerSession } from 'next-auth';
+import { auth } from '@/auth';
 
-vi.mock('next-auth', () => ({
-  getServerSession: vi.fn(),
+vi.mock('@/auth', () => ({
+  auth: vi.fn(),
 }));
 
 describe('Home, when user is not authenticated', () => {
   beforeEach(async () => {
-    (getServerSession as Mock).mockReturnValue(null);
+    (auth as Mock).mockReturnValue(null);
     render(await Page());
   });
 
@@ -44,7 +44,7 @@ describe('Home, when user is authenticated', () => {
   };
 
   beforeEach(async () => {
-    (getServerSession as Mock).mockReturnValue(Promise.resolve(session));
+    (auth as Mock).mockReturnValue(Promise.resolve(session));
     render(await Page());
   });
 

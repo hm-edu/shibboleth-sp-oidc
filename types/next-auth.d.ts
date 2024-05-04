@@ -1,28 +1,19 @@
 declare module 'next-auth' {
-  interface Session {
-    user: User;
-  }
-
   interface User {
-    id: string | undefined;
-    pairwiseId: string;
-  }
-}
-
-declare module 'next-auth/jwt' {
-  interface JWT {
     id: string;
     pairwiseId: string;
   }
+  interface Account {}
+  interface Session {
+    user: User;
+  }
 }
 
-export interface ShibbolethProfile extends Record<string, any> {
-  atHash: string;
-  sub: string;
-  aud: string;
-  authTime: number;
-  iss: string;
-  exp: number;
-  iat: number;
-  sid: string;
+import { JWT } from 'next-auth/jwt';
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    sub: string;
+    pairwiseId: string;
+  }
 }

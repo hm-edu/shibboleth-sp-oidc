@@ -1,22 +1,18 @@
 import { appConfig } from '@/config';
-import { Awaitable, NextAuthOptions, User } from 'next-auth';
+import NextAuth, { NextAuthConfig } from 'next-auth';
 
-const authOptions: NextAuthOptions = {
-  secret: appConfig.nextAuth.secret,
+export const config = {
   debug: appConfig.nextAuth.debug,
   providers: [
     {
       id: 'shibboleth',
       name: 'Shibboleth',
-      type: 'oauth',
-      idToken: true,
-      checks: ['pkce', 'state'],
+      type: 'oidc',
       issuer: appConfig.shibboleth.issuerUrl,
-      wellKnown: `${appConfig.shibboleth.issuerUrl}/.well-known/openid-configuration`,
-      authorization: { params: { scope: appConfig.shibboleth.scope } },
       clientId: appConfig.shibboleth.clientId,
       clientSecret: appConfig.shibboleth.clientSecret,
-      profile(profile): Awaitable<User> {
+      authorization: { params: { scope: appConfig.shibboleth.scope } },
+      profile(profile) {
         return {
           id: profile.sub,
           pairwiseId: profile.sub,
@@ -33,12 +29,13 @@ const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       session.user = {
+        ...session.user,
         id: token.sub,
         pairwiseId: token.pairwiseId,
       };
       return session;
     },
   },
-};
+} satisfies NextAuthConfig;
 
-export default authOptions;
+export const { auth, handlers, signIn, signOut } = NextAuth(config);

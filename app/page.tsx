@@ -1,10 +1,9 @@
 import { Typography } from '@mui/material';
 import HmLogoWithText from '@/app/ui/icons/hmLogoWithText';
-import { getServerSession } from 'next-auth';
-import authOptions from '@/app/authOptions';
+import { auth } from '@/auth';
 
 const Home = async () => {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   return (
     <>
