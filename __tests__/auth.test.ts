@@ -1,12 +1,18 @@
 import { describe, it, expect, vi, afterAll, beforeAll } from 'vitest';
 import { config } from '@/auth';
 
-describe('authOptions', () => {
+describe('auth', () => {
   const mockUser = {
     id: '123',
-    email: '',
-    emailVerified: null,
     pairwiseId: '123',
+    email: 'email',
+    emailVerified: new Date(),
+  };
+
+  const mockAccount = {
+    provider: '',
+    providerAccountId: '',
+    type: 'oauth',
   };
 
   const mockSession = {
@@ -17,15 +23,17 @@ describe('authOptions', () => {
       emailVerified: null,
     },
     sessionToken: '',
-    expires: new Date(),
     userId: '',
   };
 
   const mockToken = {
+    id: mockUser.id,
+    sub: mockUser.id,
     pairwiseId: mockUser.pairwiseId,
   };
 
   const mockProfile = {
+    sub: mockUser.id,
     pairwiseId: mockUser.pairwiseId,
   };
 
@@ -34,7 +42,7 @@ describe('authOptions', () => {
       return {
         appConfig: {
           nextAuth: {
-            debug: 'true',
+            secret: 'top-secret',
           },
           shibboleth: {
             issuerUrl: 'http://localhost:8080',
@@ -47,7 +55,7 @@ describe('authOptions', () => {
     });
   });
 
-  it('verify debug option is correctly set', async () => {
+  it('verify nextAuth debug is set', () => {
     expect(config.debug).toBeTruthy();
   });
 
@@ -55,16 +63,15 @@ describe('authOptions', () => {
     const shibbolethProvider = config.providers[0];
     expect(shibbolethProvider.id).toEqual('shibboleth');
     expect(shibbolethProvider.name).toEqual('Shibboleth');
-    expect(shibbolethProvider.type).toEqual('oidc');
+    expect(shibbolethProvider.type).toEqual('oauth');
 
     if (shibbolethProvider.type === 'oidc') {
       expect(shibbolethProvider.issuer).toEqual('http://localhost:8080');
+      expect(shibbolethProvider.clientId).toEqual('client-id');
+      expect(shibbolethProvider.clientSecret).toEqual('client-secret');
       expect(shibbolethProvider.authorization).toEqual({
         params: { scope: 'openid' },
       });
-      expect(shibbolethProvider.clientId).toEqual('client-id');
-      expect(shibbolethProvider.clientSecret).toEqual('client-secret');
-
       const user = shibbolethProvider.profile(mockProfile);
       expect(user.id).toEqual(mockProfile.sub);
       expect(user.pairwiseId).toEqual(mockProfile.pairwiseId);
@@ -75,6 +82,7 @@ describe('authOptions', () => {
     const session = await config.callbacks!!.session!!({
       newSession: undefined,
       trigger: 'update',
+      // @ts-ignore
       session: mockSession,
       token: mockToken,
       user: mockUser,
