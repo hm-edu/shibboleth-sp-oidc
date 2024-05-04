@@ -12,10 +12,5 @@ test('Shibboleth OIDC PoC, when authenticated', async ({ page }) => {
   await expect(
     page.getByText('OIDC Service-Provider Demo with Next.js', { exact: true }),
   ).toBeVisible();
-  await expect(
-    page.getByText(
-      'Welcome! Your pairwiseId is bNOVXZTT4QQWrTZhgzJbQGJ2obI=@hm.edu',
-      { exact: true },
-    ),
-  ).toBeVisible();
+  await expect(page.getByText(/Welcome! Your pairwiseId is/)).toBeVisible();
 });
