@@ -68,7 +68,7 @@ next-test:
 
 next-test-e2e:
   stage: quality
-  image: mcr.microsoft.com/playwright:v1.43.1-jammy-amd64@sha256:1df0e51224b46d872a4185e6c8d6f4b40c22eada49316bb3fd2ade18d0af9536
+  image: mcr.microsoft.com/playwright:v1.44.0-jammy-amd64@sha256:55004c458c8daa98e219628ac622c8382fb5da6c5f99279916dcbe5c404451c0
   before_script:
     - corepack enable
     - corepack prepare pnpm@latest-8 --activate
