@@ -116,7 +116,7 @@ containerize:
   stage: containerize
   cache: []
   image:
-    name: gcr.io/kaniko-project/executor:v1.22.0-debug@sha256:7b3699e9e105521075812cd3f3f4c62c913cb5cd113c929975502022df3bcf60
+    name: gcr.io/kaniko-project/executor:v1.23.0-debug@sha256:9eb8f2aff512f360d2775c80de462bf9d49599f0749f745af8f5af5f480cb4b9
     entrypoint: ['']
   parallel:
     matrix:
