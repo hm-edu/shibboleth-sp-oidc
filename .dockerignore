@@ -1,6 +1,5 @@
 Dockerfile
 node_modules
-ansible
 npm-debug.log
 README.md
 .dockerignore
@@ -10,6 +9,5 @@ README.md
 .editorconfig
 .eslintrc.json
 .gitignore
-.gitlab-ci.yml
 .prettierrc.json
 .prettierignore
