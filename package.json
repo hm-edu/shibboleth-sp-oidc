@@ -8,6 +8,7 @@
     "start": "next start",
     "test:unit": "vitest --dir __tests__",
     "test:e2e": "npx playwright test",
+    "test:e2e-state": " npx playwright codegen localhost:3000 --save-storage=e2e/storageState.json",
     "lint": "next lint",
     "prettier:format": "prettier --write .",
     "prettier:check": "prettier --check .",
