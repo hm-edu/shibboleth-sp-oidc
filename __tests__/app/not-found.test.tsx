@@ -8,11 +8,11 @@ describe('NotFound', () => {
   });
 
   it('should exists', () => {
-    expect(screen.getByRole('heading', { level: 2 })).toBeDefined();
+    expect(screen.findByTestId('not-found-illustration')).toBeDefined();
   });
 
   it('should match snapshot', () => {
-    expect(screen.getByRole('heading', { level: 2 })).toMatchSnapshot();
+    expect(screen.findByTestId('not-found-illustration')).toMatchSnapshot();
   });
 
   afterEach(() => {

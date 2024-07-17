@@ -1,9 +1,5 @@
-import Typography from '@mui/material/Typography';
+import NotFoundImage from '@/app/ui/NotFoundImage';
 
-const NotFound = () => (
-  <Typography variant="h2" align="center">
-    404 | Seite wurde nicht gefunden
-  </Typography>
-);
+const NotFound = () => <NotFoundImage data-testid="not-found-illustration" />;
 
 export default NotFound;
