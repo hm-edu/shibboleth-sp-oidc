@@ -80,7 +80,7 @@ importers:
         version: 9.1.5
       jsdom:
         specifier: ^24.0.0
-        version: 24.1.1
+        version: 24.1.2
       prettier:
         specifier: ^3.2.5
         version: 3.3.3
@@ -89,7 +89,7 @@ importers:
         version: 5.0.1(typescript@5.5.4)(vite@5.3.5(@types/node@20.16.1))
       vitest:
         specifier: ^2.0.0
-        version: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)
+        version: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.2)
 
 packages:
 
@@ -219,6 +219,10 @@ packages:
 
   '@babel/runtime@7.25.0':
     resolution: {integrity: sha512-7dRy4DwXwtzBrPbZflqxnvfxLF8kdZXPkhymtDeFoFqE6ldzjQFgYTtYIFARcLEYDrqfBfYcZt1WqFxRoyC9Rw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.25.4':
+    resolution: {integrity: sha512-DSgLeL/FNcpXuzav5wfYvHCGvynXkJbn3Zvc3823AEe9nPwW9IK4UoCSS5yGymmQzN0pCPvivtgS6/8U2kkm1w==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.24.7':
@@ -1755,8 +1759,8 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@24.1.1:
-    resolution: {integrity: sha512-5O1wWV99Jhq4DV7rCLIoZ/UIhyQeDR7wHVyZAHAshbrvZsLs+Xzz7gtwnlJTJDjleiTKh54F4dXrX70vJQTyJQ==}
+  jsdom@24.1.2:
+    resolution: {integrity: sha512-Fzeg0F93nMZ/dJncmxsXqL7oU/RBvE33RAvr+8otVU9719wHEyV9bUoIfylWWKiuARRV/6tHLX/0W1pe2IixsA==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -2787,6 +2791,10 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  '@babel/runtime@7.25.4':
+    dependencies:
+      regenerator-runtime: 0.14.1
+
   '@babel/template@7.24.7':
     dependencies:
       '@babel/code-frame': 7.24.7
@@ -3274,7 +3282,7 @@ snapshots:
   '@testing-library/dom@10.1.0':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/runtime': 7.25.0
+      '@babel/runtime': 7.25.4
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -3428,7 +3436,7 @@ snapshots:
       pathe: 1.1.2
       sirv: 2.0.4
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)
+      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.2)
 
   '@vitest/utils@2.0.5':
     dependencies:
@@ -4474,7 +4482,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@24.1.1:
+  jsdom@24.1.2:
     dependencies:
       cssstyle: 4.0.1
       data-urls: 5.0.0
@@ -5253,7 +5261,7 @@ snapshots:
       '@types/node': 20.16.1
       fsevents: 2.3.3
 
-  vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1):
+  vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.2):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -5277,7 +5285,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.16.1
       '@vitest/ui': 2.0.5(vitest@2.0.5)
-      jsdom: 24.1.1
+      jsdom: 24.1.2
     transitivePeerDependencies:
       - less
       - lightningcss
