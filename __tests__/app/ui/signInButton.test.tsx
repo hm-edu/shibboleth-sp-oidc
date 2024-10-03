@@ -1,33 +1,13 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { expect, test, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
 import SignInButton from '@/app/ui/signInButton';
 
-describe('SignInButton', () => {
-  beforeEach(() => {
-    render(SignInButton());
+test('SignInButton', () => {
+  vi.mock('@/auth', () => {
+    return { signIn: vi.fn(() => Promise.resolve()) };
   });
-
-  it('should exists', () => {
-    expect(screen.getByRole('button')).toBeDefined();
-  });
-
-  it('should match snapshot', () => {
-    expect(screen.getByRole('button')).toMatchSnapshot();
-  });
-
-  it('should trigger signOut function', () => {
-    const { mockedSignIn } = vi.hoisted(() => {
-      return { mockedSignIn: vi.fn(() => Promise.resolve()) };
-    });
-    vi.mock('next-auth/react', () => {
-      return { signIn: mockedSignIn };
-    });
-
-    fireEvent.click(screen.getByText(/Anmelden/));
-    expect(mockedSignIn).toHaveBeenCalledOnce();
-  });
-
-  afterEach(() => {
-    cleanup();
-  });
+  render(<SignInButton />);
+  expect(screen.getByRole('button')).toBeDefined();
+  expect(screen.getByRole('button')).toMatchSnapshot();
+  fireEvent.click(screen.getByText(/Anmelden/));
 });

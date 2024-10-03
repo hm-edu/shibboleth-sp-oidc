@@ -4,7 +4,7 @@ exports[`Navbar, when user is authenticated > Button should match snapshot 1`] =
 <button
   class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-e5gali-MuiButtonBase-root-MuiButton-root"
   tabindex="0"
-  type="button"
+  type="submit"
 >
   Abmelden
 </button>
@@ -43,7 +43,7 @@ exports[`Navbar, when user is not authenticated > Button should match snapshot 1
 <button
   class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-e5gali-MuiButtonBase-root-MuiButton-root"
   tabindex="0"
-  type="button"
+  type="submit"
 >
   Anmelden
 </button>

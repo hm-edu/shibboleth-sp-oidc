@@ -3,9 +3,7 @@ import { AppConfig } from './type';
 export const defineConfig = (): AppConfig => {
   return {
     nextAuth: {
-      debug: loadBoolean(process.env.NEXTAUTH_DEBUG),
-      secret: loadString(process.env.NEXTAUTH_SECRET),
-      url: loadString(process.env.NEXTAUTH_URL),
+      debug: loadBoolean(process.env.AUTH_DEBUG),
     },
     shibboleth: {
       issuerUrl: loadString(process.env.SHIBBOLETH_OIDC_ISSUER_URL),

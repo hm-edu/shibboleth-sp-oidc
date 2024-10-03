@@ -1,19 +1,18 @@
-'use client';
-
 import { Button } from '@mui/material';
-import { signIn, signOut } from 'next-auth/react';
+import { signIn } from '@/auth';
 
 const SignInButton = () => {
-  const handleSignIn = () => {
-    signIn('shibboleth').catch((error) =>
-      console.error(`signIn error: ${error}`),
-    );
+  const handleSignIn = async () => {
+    'use server';
+    await signIn('shibboleth');
   };
 
   return (
-    <Button color="inherit" variant="outlined" onClick={handleSignIn}>
-      Anmelden
-    </Button>
+    <form action={handleSignIn}>
+      <Button type="submit" color="inherit" variant="outlined">
+        Anmelden
+      </Button>
+    </form>
   );
 };
 

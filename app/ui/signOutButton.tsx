@@ -1,17 +1,18 @@
-'use client';
-
 import { Button } from '@mui/material';
-import { signOut } from 'next-auth/react';
+import { signOut } from '@/auth';
 
 const SignOutButton = () => {
-  const handleSignOut = () => {
-    signOut().catch((error) => console.error(`signOut error: ${error}`));
+  const handleSignOut = async () => {
+    'use server';
+    await signOut();
   };
 
   return (
-    <Button color="inherit" variant="outlined" onClick={handleSignOut}>
-      Abmelden
-    </Button>
+    <form action={handleSignOut}>
+      <Button type="submit" color="inherit" variant="outlined">
+        Abmelden
+      </Button>
+    </form>
   );
 };
 
