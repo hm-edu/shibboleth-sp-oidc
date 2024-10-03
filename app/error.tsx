@@ -1,14 +1,7 @@
 'use client';
 
-import { Alert, AlertTitle } from '@mui/material';
+import ErrorImage from '@/app/ui/ErrorImage';
 
-const Error = ({ error }: { error: Error & { digest?: boolean } }) => (
-  <Alert severity="error">
-    <AlertTitle>Sorry, irgendetwas ist schief gelaufen!</AlertTitle>
-    <strong>
-      `${error.name}: ${error.message}`
-    </strong>
-  </Alert>
-);
+const Error = () => <ErrorImage data-testid="error-illustration" />;
 
 export default Error;

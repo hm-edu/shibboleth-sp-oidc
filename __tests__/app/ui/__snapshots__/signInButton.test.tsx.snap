@@ -2,7 +2,7 @@
 
 exports[`SignInButton > should match snapshot 1`] = `
 <button
-  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-sbfmij-MuiButtonBase-root-MuiButton-root"
+  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-e5gali-MuiButtonBase-root-MuiButton-root"
   tabindex="0"
   type="submit"
 >
@@ -20,8 +20,5 @@ exports[`SignInButton 1`] = `
   type="submit"
 >
   Anmelden
-  <span
-    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-  />
 </button>
 `;
