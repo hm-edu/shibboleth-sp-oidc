@@ -2,16 +2,16 @@
 
 exports[`AuthErrorView > should match snapshot 1`] = `
 <div
-  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root MuiAlert-colorError MuiAlert-standardError MuiAlert-standard css-1gl6y88-MuiPaper-root-MuiAlert-root"
+  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root MuiAlert-colorError MuiAlert-standardError MuiAlert-standard css-3lhuho-MuiPaper-root-MuiAlert-root"
   role="alert"
   style="--Paper-shadow: none;"
 >
   <div
-    class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+    class="MuiAlert-icon css-vab54s-MuiAlert-icon"
   >
     <svg
       aria-hidden="true"
-      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1lzspe0-MuiSvgIcon-root"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
       data-testid="ErrorOutlineIcon"
       focusable="false"
       viewBox="0 0 24 24"
@@ -22,10 +22,10 @@ exports[`AuthErrorView > should match snapshot 1`] = `
     </svg>
   </div>
   <div
-    class="MuiAlert-message css-1pxa9xg-MuiAlert-message"
+    class="MuiAlert-message css-zioonp-MuiAlert-message"
   >
     <div
-      class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom MuiAlertTitle-root css-1hs5ppg-MuiTypography-root-MuiAlertTitle-root"
+      class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom MuiAlertTitle-root css-5ick94-MuiTypography-root-MuiAlertTitle-root"
     >
       Die Anmeldung ist aufgrund eines internen Fehlers fehlgeschlagen!
     </div>

@@ -2,7 +2,7 @@
 
 exports[`Navbar, when user is authenticated > Button should match snapshot 1`] = `
 <button
-  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-18kwzmc-MuiButtonBase-root-MuiButton-root"
+  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-vyhutw-MuiButtonBase-root-MuiButton-root"
   tabindex="0"
   type="button"
 >
@@ -12,7 +12,7 @@ exports[`Navbar, when user is authenticated > Button should match snapshot 1`] =
 
 exports[`Navbar, when user is authenticated > Link should match snapshot 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-h5 MuiLink-root MuiLink-underlineNone css-q36xxm-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-h5 MuiLink-root MuiLink-underlineNone css-1ysjqm6-MuiTypography-root-MuiLink-root"
   href="/"
 >
   Shibboleth OIDC PoC
@@ -23,7 +23,7 @@ exports[`Navbar, when user is authenticated > Logo should match snapshot 1`] = `
 <svg
   aria-hidden="true"
   aria-label="HM Logo"
-  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-a6ty4p-MuiSvgIcon-root"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-ir6b9h-MuiSvgIcon-root"
   focusable="false"
   viewBox="0 0 138.189 63.78"
   x="0"
@@ -41,7 +41,7 @@ exports[`Navbar, when user is authenticated > Logo should match snapshot 1`] = `
 
 exports[`Navbar, when user is not authenticated > Button should match snapshot 1`] = `
 <button
-  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-18kwzmc-MuiButtonBase-root-MuiButton-root"
+  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorInherit css-vyhutw-MuiButtonBase-root-MuiButton-root"
   tabindex="0"
   type="button"
 >
@@ -51,7 +51,7 @@ exports[`Navbar, when user is not authenticated > Button should match snapshot 1
 
 exports[`Navbar, when user is not authenticated > Link should match snapshot 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-h5 MuiLink-root MuiLink-underlineNone css-q36xxm-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-h5 MuiLink-root MuiLink-underlineNone css-1ysjqm6-MuiTypography-root-MuiLink-root"
   href="/"
 >
   Shibboleth OIDC PoC
@@ -62,7 +62,7 @@ exports[`Navbar, when user is not authenticated > Logo should match snapshot 1`]
 <svg
   aria-hidden="true"
   aria-label="HM Logo"
-  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-a6ty4p-MuiSvgIcon-root"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-ir6b9h-MuiSvgIcon-root"
   focusable="false"
   viewBox="0 0 138.189 63.78"
   x="0"

@@ -2,7 +2,7 @@
 
 exports[`Home, when user is authenticated > Header should match snapshot 1`] = `
 <h2
-  class="MuiTypography-root MuiTypography-h2 css-19gmx6a-MuiTypography-root"
+  class="MuiTypography-root MuiTypography-h2 css-1lpxhkd-MuiTypography-root"
 >
   OIDC Service-Provider Demo with Next.js
 </h2>
@@ -12,7 +12,7 @@ exports[`Home, when user is authenticated > Logo should match snapshot 1`] = `
 <svg
   aria-hidden="true"
   aria-label="HM Logo"
-  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-xkk8z0-MuiSvgIcon-root"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bg8hmr-MuiSvgIcon-root"
   enable-background="new 0 0 233.8582611 63.7795258"
   focusable="false"
   viewBox="0 0 233.858 63.78"
@@ -109,7 +109,7 @@ exports[`Home, when user is authenticated > Logo should match snapshot 1`] = `
 
 exports[`Home, when user is authenticated > Subheader should match snapshot 1`] = `
 <h5
-  class="MuiTypography-root MuiTypography-h5 css-1sydlpc-MuiTypography-root"
+  class="MuiTypography-root MuiTypography-h5 css-1hzis5-MuiTypography-root"
 >
   Welcome! Your pairwiseId is 
   <samp>
@@ -120,7 +120,7 @@ exports[`Home, when user is authenticated > Subheader should match snapshot 1`] 
 
 exports[`Home, when user is not authenticated > Header should match snapshot 1`] = `
 <h2
-  class="MuiTypography-root MuiTypography-h2 css-19gmx6a-MuiTypography-root"
+  class="MuiTypography-root MuiTypography-h2 css-1lpxhkd-MuiTypography-root"
 >
   OIDC Service-Provider Demo with Next.js
 </h2>
@@ -130,7 +130,7 @@ exports[`Home, when user is not authenticated > Logo should match snapshot 1`] =
 <svg
   aria-hidden="true"
   aria-label="HM Logo"
-  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-xkk8z0-MuiSvgIcon-root"
+  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bg8hmr-MuiSvgIcon-root"
   enable-background="new 0 0 233.8582611 63.7795258"
   focusable="false"
   viewBox="0 0 233.858 63.78"
