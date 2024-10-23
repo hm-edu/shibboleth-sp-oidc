@@ -31,9 +31,9 @@ exports[`AuthErrorView > should match snapshot 1`] = `
     </div>
     <strong>
       AuthError
+       - 
+      AuthErrorDescription
     </strong>
-     - 
-    AuthErrorDescription
   </div>
 </div>
 `;
