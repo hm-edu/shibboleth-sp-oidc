@@ -49,7 +49,7 @@ importers:
         version: 15.0.1(@babel/core@7.25.8)(@playwright/test@1.48.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-auth:
         specifier: ^4.24.7
-        version: 4.24.8(next@15.0.1(@babel/core@7.25.8)(@playwright/test@1.48.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.24.9(next@15.0.1(@babel/core@7.25.8)(@playwright/test@1.48.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -1268,8 +1268,8 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  cookie@0.5.0:
-    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+  cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
 
   cosmiconfig@7.1.0:
@@ -2032,11 +2032,11 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  next-auth@4.24.8:
-    resolution: {integrity: sha512-SLt3+8UCtklsotnz2p+nB4aN3IHNmpsQFAZ24VLxGotWGzSxkBh192zxNhm/J5wgkcrDWVp0bwqvW0HksK/Lcw==}
+  next-auth@4.24.9:
+    resolution: {integrity: sha512-1eSvaJb5I3EIzSkU+HMBnLPQTD+q23CuBhWRW6PvT7x5wVHTAkOTpnLobczPjqra38ai8E6uSlVy/HSV3gecXw==}
     peerDependencies:
       '@auth/core': 0.34.2
-      next: ^12.2.5 || ^13 || ^14
+      next: ^12.2.5 || ^13 || ^14 || ^15
       nodemailer: ^6.6.5
       react: ^17.0.2 || ^18
       react-dom: ^17.0.2 || ^18
@@ -2201,8 +2201,8 @@ packages:
     peerDependencies:
       preact: '>=10'
 
-  preact@10.24.1:
-    resolution: {integrity: sha512-PnBAwFI3Yjxxcxw75n6VId/5TFxNW/81zexzWD9jn1+eSrOP84NdsS38H5IkF/UH3frqRPT+MvuCoVHjTDTnDw==}
+  preact@10.24.3:
+    resolution: {integrity: sha512-Z2dPnBnMUfyQfSQ+GBdsGa16hz35YmLmtTLhM169uW944hYL6xzTYkJjC07j+Wosz733pMWx0fgON3JNw1jJQA==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -3885,7 +3885,7 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  cookie@0.5.0: {}
+  cookie@0.7.2: {}
 
   cosmiconfig@7.1.0:
     dependencies:
@@ -4787,17 +4787,17 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next-auth@4.24.8(next@15.0.1(@babel/core@7.25.8)(@playwright/test@1.48.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next-auth@4.24.9(next@15.0.1(@babel/core@7.25.8)(@playwright/test@1.48.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.25.7
+      '@babel/runtime': 7.25.9
       '@panva/hkdf': 1.2.1
-      cookie: 0.5.0
+      cookie: 0.7.2
       jose: 4.15.9
       next: 15.0.1(@babel/core@7.25.8)(@playwright/test@1.48.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       oauth: 0.9.15
       openid-client: 5.7.0
-      preact: 10.24.1
-      preact-render-to-string: 5.2.6(preact@10.24.1)
+      preact: 10.24.3
+      preact-render-to-string: 5.2.6(preact@10.24.3)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       uuid: 8.3.2
@@ -4955,12 +4955,12 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact-render-to-string@5.2.6(preact@10.24.1):
+  preact-render-to-string@5.2.6(preact@10.24.3):
     dependencies:
-      preact: 10.24.1
+      preact: 10.24.3
       pretty-format: 3.8.0
 
-  preact@10.24.1: {}
+  preact@10.24.3: {}
 
   prelude-ls@1.2.1: {}
 
