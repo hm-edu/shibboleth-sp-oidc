@@ -5,6 +5,7 @@ declare module 'next-auth' {
 
   interface User {
     id: string | undefined;
+    eduPersonPrincipalName: string;
     pairwiseId: string;
   }
 }
@@ -12,6 +13,7 @@ declare module 'next-auth' {
 declare module 'next-auth/jwt' {
   interface JWT {
     id: string;
+    eduPersonPrincipalName: string;
     pairwiseId: string;
   }
 }

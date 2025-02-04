@@ -19,6 +19,7 @@ const authOptions: NextAuthOptions = {
       profile(profile): Awaitable<User> {
         return {
           id: profile.sub,
+          eduPersonPrincipalName: profile.eduPersonPrincipalName,
           pairwiseId: profile.sub,
         };
       },
@@ -27,6 +28,7 @@ const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user, account }) {
       if (user && account) {
+        token.eduPersonPrincipalName = user.eduPersonPrincipalName;
         token.pairwiseId = user.pairwiseId;
       }
       return token;
@@ -34,6 +36,7 @@ const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       session.user = {
         id: token.sub,
+        eduPersonPrincipalName: token.eduPersonPrincipalName,
         pairwiseId: token.pairwiseId,
       };
       return session;
