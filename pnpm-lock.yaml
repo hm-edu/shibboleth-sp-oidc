@@ -19,7 +19,7 @@ importers:
         version: 11.14.0(@emotion/react@11.14.0(@types/react@19.0.10)(react@19.0.0))(@types/react@19.0.10)(react@19.0.0)
       '@fontsource/roboto':
         specifier: ^5.0.12
-        version: 5.2.0
+        version: 5.2.1
       '@mui/icons-material':
         specifier: ^6.0.0
         version: 6.4.6(@mui/material@6.4.6(@emotion/react@11.14.0(@types/react@19.0.10)(react@19.0.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@19.0.10)(react@19.0.0))(@types/react@19.0.10)(react@19.0.0))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@types/react@19.0.10)(react@19.0.0)
@@ -481,8 +481,8 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource/roboto@5.2.0':
-    resolution: {integrity: sha512-RgDVfXtRZlMRBkzcVMETP0m5Xy8VaKAEnqTD2NFe34B6Qc2Xvn01Hxu3mdrF2My0YM0n4Iae5XWM7yzEsm4OZg==}
+  '@fontsource/roboto@5.2.1':
+    resolution: {integrity: sha512-9fRnNLrNN1mksWUDuQNkFBFNgTLEAIs7Mglb3fPkHDRPvbAfafaVz49Vz74+nItAZ1ovZr4H7MXrYAkTwvH9iA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -3110,7 +3110,7 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
-  '@fontsource/roboto@5.2.0': {}
+  '@fontsource/roboto@5.2.1': {}
 
   '@humanfs/core@0.19.1': {}
 
