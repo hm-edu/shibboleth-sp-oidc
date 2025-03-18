@@ -15,7 +15,8 @@
         "bump",
         "replacement"
       ],
-      "automerge": true
-    }
+      "automerge": true,
+      "matchPackageNames": ["@playwright/test", "mcr.microsoft.com/playwright"]
+    },
   ]
 }
