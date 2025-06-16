@@ -22,7 +22,7 @@
     "@mui/icons-material": "^7.0.0",
     "@mui/material": "^7.0.0",
     "@mui/material-nextjs": "^7.0.0",
-    "@types/node": "22.15.31",
+    "@types/node": "22.15.32",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "eslint": "9.29.0",
