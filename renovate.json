@@ -3,6 +3,10 @@
   "extends": ["config:base"],
   "packageRules": [
     {
+      "groupName": "Playwright",
+      "matchPackageNames": ["@playwright/test", "mcr.microsoft.com/playwright"]
+    },
+    {
       "matchUpdateTypes": [
         "major",
         "minor",
