@@ -36,7 +36,7 @@
   "devDependencies": {
     "@playwright/test": "1.54.2",
     "@testing-library/react": "^16.0.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "@vitest/ui": "^3.0.0",
     "eslint-config-prettier": "^10.0.0",
     "husky": "^9.0.11",
