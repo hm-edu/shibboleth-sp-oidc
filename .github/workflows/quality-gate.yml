@@ -88,13 +88,13 @@ jobs:
           NEXTAUTH_SECRET: topsecret
           SHIBBOLETH_OIDC_CLIENT_ID: ${{ secrets.OIDC_CLIENT_ID }}
           SHIBBOLETH_OIDC_CLIENT_SECRET: ${{ secrets.OIDC_CLIENT_SECRET }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: always()
         with:
           name: test-results
           path: test-results/
           retention-days: 30
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: always()
         with:
           name: playwright-report
