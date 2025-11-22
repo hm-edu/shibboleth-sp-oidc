@@ -23,5 +23,5 @@ const loadString = (env: string | undefined): string => {
 
 const loadBoolean = (env: string | undefined): boolean => {
   if (env === undefined) return false;
-  return JSON.parse(env.toLowerCase());
+  return JSON.parse(env.toLowerCase()) as boolean;
 };

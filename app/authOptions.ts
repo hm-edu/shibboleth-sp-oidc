@@ -26,14 +26,14 @@ const authOptions: NextAuthOptions = {
     },
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
+    jwt({ token, user, account }) {
       if (user && account) {
         token.eduPersonPrincipalName = user.eduPersonPrincipalName;
         token.pairwiseId = user.pairwiseId;
       }
       return token;
     },
-    async session({ session, token }) {
+    session({ session, token }) {
       session.user = {
         id: token.sub,
         eduPersonPrincipalName: token.eduPersonPrincipalName,
