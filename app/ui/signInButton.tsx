@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@mui/material';
-import { signIn, signOut } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 
 const SignInButton = () => {
   const handleSignIn = () => {

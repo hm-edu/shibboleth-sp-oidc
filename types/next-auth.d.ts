@@ -18,6 +18,7 @@ declare module 'next-auth/jwt' {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface ShibbolethProfile extends Record<string, any> {
   atHash: string;
   sub: string;
