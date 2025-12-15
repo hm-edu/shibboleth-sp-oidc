@@ -46,7 +46,7 @@
     "jsdom": "^27.0.0",
     "prettier": "^3.2.5",
     "typescript-eslint": "^8.46.2",
-    "vite-tsconfig-paths": "^5.0.0",
+    "vite-tsconfig-paths": "^6.0.0",
     "vitest": "^4.0.0"
   },
   "packageManager": "pnpm@10.25.0"
