@@ -95,7 +95,7 @@ importers:
         version: 8.54.0(eslint@9.39.2)(typescript@5.9.3)
       vite-tsconfig-paths:
         specifier: ^6.0.0
-        version: 6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.11))
+        version: 6.1.0(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.11))
       vitest:
         specifier: ^4.0.0
         version: 4.0.18(@types/node@24.10.11)(@vitest/ui@4.0.18)(jsdom@27.0.0(postcss@8.5.6))
@@ -2668,8 +2668,8 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
-  vite-tsconfig-paths@6.0.5:
-    resolution: {integrity: sha512-f/WvY6ekHykUF1rWJUAbCU7iS/5QYDIugwpqJA+ttwKbxSbzNlqlE8vZSrsnxNQciUW+z6lvhlXMaEyZn9MSig==}
+  vite-tsconfig-paths@6.1.0:
+    resolution: {integrity: sha512-kpd3sY9glHIDaq4V/Tlc1Y8WaKtutoc3B525GHxEVKWX42FKfQsXvjFOemu1I8VIN8pNbrMLWVTbW79JaRUxKg==}
     peerDependencies:
       vite: '*'
 
@@ -5564,7 +5564,7 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  vite-tsconfig-paths@6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.11)):
+  vite-tsconfig-paths@6.1.0(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.11)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
