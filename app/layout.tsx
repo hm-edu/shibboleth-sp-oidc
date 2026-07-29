@@ -27,11 +27,13 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
             <NextAuthProvider>
               <ButtonAppBar />
               <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                height="100vh"
-                textAlign="center"
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100vh',
+                  textAlign: 'center',
+                }}
               >
                 <Container sx={{ padding: 2, flexGrow: 1 }}>
                   {children}
