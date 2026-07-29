@@ -36,6 +36,10 @@
         "replacement"
       ],
       "automerge": true
+    },
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "1 day"
     }
   ]
 }
