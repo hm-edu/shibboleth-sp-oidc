@@ -12,11 +12,11 @@ const Home = async () => {
         aria-label="HM Logo"
         sx={{ height: 'auto', width: 'auto' }}
       />
-      <Typography variant="h2" textAlign="center">
+      <Typography variant="h2" sx={{ textAlign: 'center' }}>
         OIDC Service-Provider Demo with Next.js
       </Typography>
       {session?.user.pairwiseId ? (
-        <Typography variant="h5" textAlign="center">
+        <Typography variant="h5" sx={{ textAlign: 'center' }}>
           Welcome! Your pairwiseId is <samp>{session.user?.pairwiseId}</samp>
         </Typography>
       ) : (
