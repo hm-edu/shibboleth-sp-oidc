@@ -7,6 +7,7 @@ import { AdapterUser } from 'next-auth/adapters';
 describe('authOptions', () => {
   const mockUser: AdapterUser = {
     id: '123',
+    eduPersonPrincipalName: 'john.doe@example.edu',
     pairwiseId: '123',
     email: 'email',
     emailVerified: new Date(),
@@ -26,6 +27,7 @@ describe('authOptions', () => {
   const mockToken: JWT = {
     id: mockUser.id,
     sub: mockUser.id,
+    eduPersonPrincipalName: mockUser.eduPersonPrincipalName,
     pairwiseId: mockUser.pairwiseId,
   };
 
