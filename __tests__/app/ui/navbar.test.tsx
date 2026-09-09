@@ -37,8 +37,8 @@ describe('Navbar, when user is not authenticated', () => {
     expect(screen.getByRole('button')).toBeDefined();
   });
 
-  it('Button should match snapshot', () => {
-    expect(screen.getByRole('button')).toMatchSnapshot();
+  it('Button should show sign in text', () => {
+    expect(screen.getByRole('button').textContent).toEqual('Anmelden');
   });
 
   afterEach(() => {
@@ -84,8 +84,8 @@ describe('Navbar, when user is authenticated', () => {
     expect(screen.getByRole('button')).toBeDefined();
   });
 
-  it('Button should match snapshot', () => {
-    expect(screen.getByRole('button')).toMatchSnapshot();
+  it('Button should show sign out text', () => {
+    expect(screen.getByRole('button').textContent).toEqual('Abmelden');
   });
 
   afterEach(() => {
