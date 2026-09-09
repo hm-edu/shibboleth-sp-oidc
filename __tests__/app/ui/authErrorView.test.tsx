@@ -2,22 +2,22 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import AuthErrorView from '@/app/ui/authErrorView';
 
+vi.mock('next/navigation', () => {
+  return {
+    useSearchParams: vi.fn(() => {
+      return { get: vi.fn(() => 'AuthError') };
+    }),
+  };
+});
+
+vi.mock('@/app/errorDescription', () => {
+  return {
+    getAuthErrorDescription: vi.fn(() => 'AuthErrorDescription'),
+  };
+});
+
 describe('AuthErrorView', () => {
   beforeEach(() => {
-    vi.mock('next/navigation', () => {
-      return {
-        useSearchParams: vi.fn(() => {
-          return { get: vi.fn(() => 'AuthError') };
-        }),
-      };
-    });
-
-    vi.mock('@/app/errorDescription', () => {
-      return {
-        getAuthErrorDescription: vi.fn(() => 'AuthErrorDescription'),
-      };
-    });
-
     render(AuthErrorView());
   });
 

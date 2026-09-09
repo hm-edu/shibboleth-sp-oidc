@@ -1,8 +1,24 @@
-import { describe, it, expect, vi, afterAll, beforeAll } from 'vitest';
-import authOptions from '@/app/authOptions';
+import { describe, it, expect, vi } from 'vitest';
 import { JWT } from 'next-auth/jwt';
 import { Account, Session } from 'next-auth';
 import { AdapterUser } from 'next-auth/adapters';
+import authOptions from '@/app/authOptions';
+
+vi.mock('@/config', () => {
+  return {
+    appConfig: {
+      nextAuth: {
+        secret: 'top-secret',
+      },
+      shibboleth: {
+        issuerUrl: 'http://localhost:8080',
+        scope: 'openid',
+        clientId: 'client-id',
+        clientSecret: 'client-secret',
+      },
+    },
+  };
+});
 
 describe('authOptions', () => {
   const mockUser: AdapterUser = {
@@ -35,24 +51,6 @@ describe('authOptions', () => {
     sub: mockUser.id,
     pairwiseId: mockUser.pairwiseId,
   };
-
-  beforeAll(() => {
-    vi.mock('@/config', () => {
-      return {
-        appConfig: {
-          nextAuth: {
-            secret: 'top-secret',
-          },
-          shibboleth: {
-            issuerUrl: 'http://localhost:8080',
-            scope: 'openid',
-            clientId: 'client-id',
-            clientSecret: 'client-secret',
-          },
-        },
-      };
-    });
-  });
 
   it('verify nextAuth secret is set', () => {
     expect(authOptions.secret).toEqual('top-secret');
@@ -104,9 +102,5 @@ describe('authOptions', () => {
     });
 
     expect(jwt.pairwiseId).toEqual(mockSession.user.pairwiseId);
-  });
-
-  afterAll(() => {
-    vi.unstubAllEnvs();
   });
 });
