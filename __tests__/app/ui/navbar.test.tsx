@@ -38,7 +38,7 @@ describe('Navbar, when user is not authenticated', () => {
   });
 
   it('Button should show sign in text', () => {
-    expect(screen.getByRole('button')).toHaveTextContent('Anmelden');
+    expect(screen.getByRole('button').textContent).toEqual('Anmelden');
   });
 
   afterEach(() => {
@@ -85,7 +85,7 @@ describe('Navbar, when user is authenticated', () => {
   });
 
   it('Button should show sign out text', () => {
-    expect(screen.getByRole('button')).toHaveTextContent('Abmelden');
+    expect(screen.getByRole('button').textContent).toEqual('Abmelden');
   });
 
   afterEach(() => {

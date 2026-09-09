@@ -20,8 +20,8 @@ describe('SignOutButton', () => {
     expect(screen.getByRole('button')).toBeDefined();
   });
 
-  it('should match snapshot', () => {
-    expect(screen.getByRole('button')).toMatchSnapshot();
+  it('should show sign out text', () => {
+    expect(screen.getByRole('button').textContent).toEqual('Abmelden');
   });
 
   it('should trigger signOut function', () => {

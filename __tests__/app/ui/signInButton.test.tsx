@@ -20,8 +20,8 @@ describe('SignInButton', () => {
     expect(screen.getByRole('button')).toBeDefined();
   });
 
-  it('should match snapshot', () => {
-    expect(screen.getByRole('button')).toMatchSnapshot();
+  it('should show sign in text', () => {
+    expect(screen.getByRole('button').textContent).toEqual('Anmelden');
   });
 
   it('should trigger signOut function', () => {
