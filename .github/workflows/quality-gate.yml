@@ -64,7 +64,7 @@ jobs:
   test-e2e:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.63.0-jammy-amd64@sha256:957bb6b7cba151ced0b5bb841703e282c45df1d934af88933b1b655411ecba3a
+      image: mcr.microsoft.com/playwright:v1.64.0-jammy-amd64@sha256:e316f4ec4ab6148c182c40044790bc2bf8ac60e1751600d38ec7758a935c3120
     env:
       HOME: /root
     steps:
